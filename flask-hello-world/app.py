@@ -12,6 +12,7 @@ def hello_world():
 def goodbye_world():
     return 'Goodbye, world!'
 
+# NOTE: go must be called main.go and file must live in /data
 @app.route('/compileGo/<fileName>')
 def compile_go(fileName):
 
@@ -31,7 +32,7 @@ def compile_go(fileName):
     # TODO: Mount in docker volume
     subprocess.run(["go", "build", "-o", fileDir, fileLoc])
 
-    return f'Complete! Binary is in: {fileDir}'
+    return f'Build complete! Binary is in: {fileDir}'
 
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 5000))
