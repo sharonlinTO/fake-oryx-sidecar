@@ -4,11 +4,15 @@
 `docker network create testnetwork`
 
 ## Building the API
+In the folder /flask-hello-world:
+
 `docker build -t test-flask .`
 
 `docker run --name=flask --net=testnetwork -dp 5000:5000 test-flask`
 
 ## Building the caller/client
+In the folder /caller-hello-world:
+
 `docker build -t test-caller .`
 
 `docker run --name=caller --net=testnetwork -dp 5324:5324 test-caller`
