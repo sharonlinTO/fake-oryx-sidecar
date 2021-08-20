@@ -4,7 +4,6 @@
 `docker network create testnetwork`
 
 ## Building the API (Fake Oryx)
-In the folder /fake-oryx:
 
 `docker build -t test-fake-oryx .`
 
